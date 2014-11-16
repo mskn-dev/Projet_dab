@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_dab.DistributeurController">
-	<!-- TODO Add Nodes -->
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_dab.DistributeurController">
+   <top>
+      <AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-size: 1000px 600px;" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="335.0" layoutY="121.0" prefHeight="35.0" prefWidth="330.0" text="HYPERMEDIA" textFill="RED">
+               <graphic>
+                  <Label prefHeight="35.0" prefWidth="169.0" text="DEPARTEMENT ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="111.0" fitWidth="191.0" layoutX="14.0" layoutY="14.0">
+               <image>
+                  <Image url="@img/paris8.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="280.0" layoutY="271.0" text="Bienvenue au projet DAB">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="480.0" layoutY="450.0" />
+         </children></AnchorPane>
+   </top>
 </BorderPane>
