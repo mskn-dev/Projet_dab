@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_dab.DistributeurController">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_dab.AcceuilController">
    <top>
       <AnchorPane id="mainAnchor" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-size: 1000px 600px;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
@@ -33,7 +34,6 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label layoutX="480.0" layoutY="450.0" />
          </children></AnchorPane>
    </top>
 </BorderPane>
