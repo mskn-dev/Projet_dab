@@ -9,21 +9,56 @@ import javafx.fxml.FXMLLoader;
 
 
 public class Main extends Application {
+	private Stage primaryStage;
+	private BorderPane accueilLayout;
 	static {
         Font.loadFont(Main.class.getResource("./fonts/fontawesome-webfont.ttf").toExternalForm(), 10);
     }
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Acceuil.fxml"));
-			Scene scene = new Scene(root,1000,600);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			this.primaryStage = primaryStage;
+			this.primaryStage.setTitle("Acceuil");
+			
+			SetAcceuilLayout();
+			SetDistributeurLayout();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void SetAcceuilLayout(){
+		try {	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("Acceuil.fxml"));
+			accueilLayout = (BorderPane) loader.load();
+			
+			Scene scene = new Scene(accueilLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void SetDistributeurLayout(){
+
+		try {	
+			//FXMLLoader loader = new FXMLLoader();
+			//loader.setLocation(Main.class.getResource("Acceuil.fxml"));
+			//accueilLayout = (BorderPane) loader.load();
+			
+			//Scene scene = new Scene(accueilLayout);
+			//primaryStage.setScene(scene);
+			//primaryStage.show();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);
