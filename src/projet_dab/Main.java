@@ -37,6 +37,10 @@ public class Main extends Application {
 			Scene scene = new Scene(accueilLayout);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+			//AcceuilController controller = new AcceuilController();
+			//controller = loader.getController();
+			//controller.setMainApp(this);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
