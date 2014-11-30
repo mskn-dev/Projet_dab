@@ -12,3 +12,7 @@
 #fenetreExit{
 	-fx-background-image:url("./img/bg.jpg");
 }
+
+#resultatFenetrePrincipale{
+	-fx-alignment:center;
+}

@@ -3,6 +3,7 @@ package projet_dab;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
 public class FenetrePrincipaleController {
@@ -15,9 +16,23 @@ public class FenetrePrincipaleController {
 	private Button DepotArgent = new Button();
 	@FXML
 	private Button Quitter = new Button();
+	@FXML
+	private Button RetraitCinq = new Button();
+	@FXML
+	private Button RetraitDix = new Button();
+	@FXML
+	private Button RetraitVingt = new Button();
+	@FXML
+	private Button RetraitTrente = new Button();
+
 	
-	private FenetreDistributeurController controller;
+	@FXML
+	private Label Resultat = new Label();
+	
+
 	private Main MainApp;
+	private Distributeur Dab = new Distributeur();
+	
 	 
 	public FenetrePrincipaleController(){
 	}
@@ -25,7 +40,9 @@ public class FenetrePrincipaleController {
 	public void ActionConsulterCompte(){
 		this.ConsulterCompte.setOnMouseClicked(new EventHandler<MouseEvent>(){
 		    public void handle(MouseEvent me){
-		    	//MainApp.SetFenetrePrincipaleLayout();
+		    	HideButtonRetrait();
+		    	ShowLabel();
+		    	Resultat.setText("Votre Solde est de : "+Dab.GetSolde()+"€");
 		    }
 		});
 	}
@@ -33,7 +50,32 @@ public class FenetrePrincipaleController {
 	public void ActionRetraitArgent(){
 		this.RetraitArgent.setOnMouseClicked(new EventHandler<MouseEvent>(){
 		    public void handle(MouseEvent me){
-		    	//MainApp.SetFenetrePrincipaleLayout();
+		    	Resultat.setText("Combien voulez-vous retirer ?");
+		    	ShowButtonRetrait();
+		    	ShowLabel();
+		    }
+		});
+	}
+	
+	public void ActionRetraitSomme(){
+		this.RetraitCinq.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		    public void handle(MouseEvent me){
+		    	ActionRetraitSomme(5);
+		    }
+		});
+		this.RetraitDix.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		    public void handle(MouseEvent me){
+		    	ActionRetraitSomme(10);
+		    }
+		});
+		this.RetraitVingt.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		    public void handle(MouseEvent me){
+		    	ActionRetraitSomme(20);
+		    }
+		});
+		this.RetraitTrente.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		    public void handle(MouseEvent me){
+		    	ActionRetraitSomme(30);
 		    }
 		});
 	}
@@ -57,5 +99,41 @@ public class FenetrePrincipaleController {
 	 public void SetMainApp(Main mainApp){
 		 this.MainApp = mainApp;
 	 }
-
+	 
+	 public void HideLabel(){
+		 this.Resultat.setVisible(false);
+	 }
+	 
+	 public void ShowLabel(){
+		 this.Resultat.setVisible(true);
+	 }
+	 
+	 public void HideButtonRetrait(){
+		 this.RetraitCinq.setVisible(false);
+		 this.RetraitDix.setVisible(false);
+		 this.RetraitVingt.setVisible(false);
+		 this.RetraitTrente.setVisible(false);
+	 }
+	 
+	 public void ShowButtonRetrait(){
+		 this.RetraitCinq.setVisible(true);
+		 this.RetraitDix.setVisible(true);
+		 this.RetraitVingt.setVisible(true);
+		 this.RetraitTrente.setVisible(true);
+	 }
+	 
+	 public void ActionRetraitSomme(int somme){
+		if(Dab.Retrait(somme)){
+	    	HideButtonRetrait();
+	    	ShowLabel();
+	    	Resultat.setText("Votre nouveau solde est de : "+Dab.GetSolde()+"€");
+		}
+		else{
+			HideButtonRetrait();
+	    	ShowLabel();
+			Resultat.setText("Votre solde est inférieur à la somme que vous voulez retirer ! ");
+		}
+			
+	 }
+	 
 }

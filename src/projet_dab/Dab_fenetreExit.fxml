@@ -6,15 +6,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projet_dab.ExitController">
    <center>
       <AnchorPane id="fenetreExit" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-size: 1000px 600px;" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="253.0" layoutY="271.0" prefHeight="58.0" prefWidth="494.0" text="Au revoir, nous éspérons vous revoir bientôt !" textFill="RED">
+            <Label layoutX="253.0" layoutY="134.0" prefHeight="58.0" prefWidth="494.0" text="Au revoir, nous éspérons vous revoir bientôt !" textFill="RED">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <Button fx:id="ExitButton" layoutX="355.0" layoutY="300.0" mnemonicParsing="false" onAction="#ActionExitController" onMouseClicked="#ActionExitController" prefHeight="39.0" prefWidth="290.0" style="-fx-text-fill: red;" text="Quitter" />
+            <Label layoutX="269.0" layoutY="573.0" prefHeight="27.0" prefWidth="462.0" style="-fx-background-color: white;" text="Réalisé par : Mehdi AMASKANE et Moudhafer Guellouz" />
          </children></AnchorPane>
    </center>
 </BorderPane>
