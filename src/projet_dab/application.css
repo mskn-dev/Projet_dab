@@ -1,3 +1,10 @@
 #mainAnchor{
 	-fx-background-image:url("./img/bg.jpg");
 }
+#fenetrePrincipale{
+	-fx-background-image:url("./img/bg.jpg");
+}
+
+#fenetreDistributeur{
+	-fx-background-image:url("./img/bg.jpg");
+}

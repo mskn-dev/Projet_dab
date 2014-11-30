@@ -17,7 +17,7 @@ public class AcceuilController {
 	 public void ActionAcceuilController(){
 		 this.AcceuilButton.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			    public void handle(MouseEvent me){
-			    	System.out.println("Sosos");
+			    	MainApp.SetDistributeurLayout();
 			    }
 			});
 	 }
