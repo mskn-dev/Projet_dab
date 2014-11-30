@@ -8,3 +8,7 @@
 #fenetreDistributeur{
 	-fx-background-image:url("./img/bg.jpg");
 }
+
+#fenetreExit{
+	-fx-background-image:url("./img/bg.jpg");
+}

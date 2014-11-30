@@ -17,7 +17,7 @@ public class AcceuilController {
 	 public void ActionAcceuilController(){
 		 this.AcceuilButton.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			    public void handle(MouseEvent me){
-			    	MainApp.SetDistributeurLayout();
+			    	MainApp.SetDistributeurLayout(false);
 			    }
 			});
 	 }

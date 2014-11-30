@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 public class Main extends Application {
 	private Stage primaryStage;
 	private BorderPane accueilLayout;
+	private BorderPane exitLayout;
 	private BorderPane DistributeurLayout;
 	private BorderPane FentrePrincipaleLayout;
 
@@ -50,7 +51,7 @@ public class Main extends Application {
 		}
 	}
 	
-	public void SetDistributeurLayout(){
+	public void SetDistributeurLayout(boolean exit){
 
 		try {	
 			this.primaryStage.setTitle("Fenetre Distributeur");
@@ -63,6 +64,10 @@ public class Main extends Application {
 			primaryStage.show();
 			
 			FenetreDistributeurController controller = loader.getController();
+			if(exit)
+				controller.HideInsererButton();
+			else
+				controller.HideRetirerButton();
 			controller.SetMainApp(this);
 		}
 		catch(Exception e) {
@@ -70,7 +75,7 @@ public class Main extends Application {
 		}
 	}
 	
-public void SetFenetrePrincipaleLayout(){
+	public void SetFenetrePrincipaleLayout(){
 		
 		try {	
 			this.primaryStage.setTitle("Fenetre Principale");
@@ -90,6 +95,22 @@ public void SetFenetrePrincipaleLayout(){
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void SetExitLayout(){
+		try {	
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(Main.class.getResource("Dab_fenetreExit.fxml"));
+			exitLayout = (BorderPane) loader.load();
+			
+			Scene scene = new Scene(exitLayout);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 		
 	

@@ -16,6 +16,7 @@ public class FenetrePrincipaleController {
 	@FXML
 	private Button Quitter = new Button();
 	
+	private FenetreDistributeurController controller;
 	private Main MainApp;
 	 
 	public FenetrePrincipaleController(){
@@ -48,7 +49,7 @@ public class FenetrePrincipaleController {
 	public void ActionQuitter(){
 		this.Quitter.setOnMouseClicked(new EventHandler<MouseEvent>(){
 		    public void handle(MouseEvent me){
-		    	MainApp.SetDistributeurLayout();
+		    	MainApp.SetDistributeurLayout(true);
 		    }
 		});
 	}
