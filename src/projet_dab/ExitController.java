@@ -19,7 +19,7 @@ public class ExitController {
 	 public void ActionExitController(){
 		 this.ExitButton.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			    public void handle(MouseEvent me){
-			    	MainApp.Exit();
+			    	System.exit(0);
 			    }
 			});
 	 }

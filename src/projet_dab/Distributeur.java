@@ -32,4 +32,16 @@ public class Distributeur {
 		}
 		
 	}
+	
+	public boolean Depot(int somme){
+		this.Solde = this.Solde + somme;
+		if(this.Solde <= 200){
+			return true;
+		}
+		else{
+			this.Solde = 200;
+			return false;
+		}
+		
+	}
 }

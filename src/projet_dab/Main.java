@@ -88,7 +88,7 @@ public class Main extends Application {
 			
 			FenetrePrincipaleController controller = loader.getController();
 			controller.HideLabel();
-			controller.HideButtonRetrait();
+			controller.HideButton();
 			controller.SetMainApp(this);
 			
 		}

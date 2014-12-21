@@ -20,10 +20,10 @@
             <Button fx:id="RetraitArgent" layoutY="221.0" mnemonicParsing="false" onAction="#ActionRetraitArgent" onMouseClicked="#ActionRetraitArgent" prefHeight="39.0" prefWidth="208.0" text="Retirer de l'argent " />
             <Button fx:id="Quitter" layoutX="865.0" layoutY="531.0" mnemonicParsing="false" onAction="#ActionQuitter" onMouseClicked="#ActionQuitter" text="Quitter" textFill="RED" />
             <Label id="resultatFenetrePrincipale" fx:id="Resultat" layoutX="147.0" layoutY="199.0" prefHeight="122.0" prefWidth="707.0" stylesheets="@application.css" text="Label" />
-            <Button fx:id="RetraitDix" layoutX="727.0" layoutY="221.0" mnemonicParsing="false" onAction="#ActionRetraitSomme" onMouseClicked="#ActionRetraitSomme" text="10€" />
-            <Button fx:id="RetraitVingt" layoutX="727.0" layoutY="310.0" mnemonicParsing="false" onAction="#ActionRetraitSomme" onMouseClicked="#ActionRetraitSomme" text="20€" />
-            <Button fx:id="RetraitTrente" layoutX="727.0" layoutY="393.0" mnemonicParsing="false" onAction="#ActionRetraitSomme" onMouseClicked="#ActionRetraitSomme" text="30€" />
-            <Button fx:id="RetraitCinq" layoutX="732.0" layoutY="138.0" mnemonicParsing="false" onAction="#ActionRetraitSomme" onMouseClicked="#ActionRetraitSomme" text="5€" />
+            <Button fx:id="DixButton" layoutX="727.0" layoutY="221.0" mnemonicParsing="false" onAction="#ActionSomme" onMouseClicked="#ActionSomme" text="10€" />
+            <Button fx:id="VingtButton" layoutX="727.0" layoutY="310.0" mnemonicParsing="false" onAction="#ActionSomme" onMouseClicked="#ActionSomme" text="20€" />
+            <Button fx:id="TrenteButton" layoutX="727.0" layoutY="393.0" mnemonicParsing="false" onAction="#ActionSomme" onMouseClicked="#ActionSomme" text="30€" />
+            <Button fx:id="CinqButton" layoutX="732.0" layoutY="138.0" mnemonicParsing="false" onAction="#ActionSomme" onMouseClicked="#ActionSomme" text="5€" />
          </children></AnchorPane>
    </center>
 </BorderPane>
