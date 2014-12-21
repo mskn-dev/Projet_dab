@@ -1,5 +1,7 @@
 package projet_dab;
 	
+import java.net.Socket;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -13,12 +15,8 @@ public class Main extends Application {
 	private BorderPane exitLayout;
 	private BorderPane DistributeurLayout;
 	private BorderPane FentrePrincipaleLayout;
+	private ClientDabSocket dabSocket = new ClientDabSocket(); 
 
-	
-	
-//	static {
-//        Font.loadFont(Main.class.getResource("./fonts/fontawesome-webfont.ttf").toExternalForm(), 10);
-//    }
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -88,7 +86,9 @@ public class Main extends Application {
 			
 			FenetrePrincipaleController controller = loader.getController();
 			controller.HideLabel();
+			controller.HideListeAmis();
 			controller.HideButton();
+			controller.setAmisOnCombo(this.dabSocket.getisteAmis());
 			controller.SetMainApp(this);
 			
 		}
@@ -120,6 +120,6 @@ public class Main extends Application {
 		
 	
 	public static void main(String[] args) {
-		launch(args);
+		launch(args);	
 	}
 }

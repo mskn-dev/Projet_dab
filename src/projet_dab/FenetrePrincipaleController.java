@@ -1,8 +1,13 @@
 package projet_dab;
 
+import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 
@@ -16,6 +21,11 @@ public class FenetrePrincipaleController {
 	private Button RetraitArgent = new Button();
 	@FXML
 	private Button DepotArgent = new Button();
+	@FXML
+	private Button EnvoyerAmis = new Button();
+	@FXML
+	private ComboBox<String> listeAmis = new ComboBox<String>();
+	
 	@FXML
 	private Button Quitter = new Button();
 	@FXML
@@ -39,10 +49,33 @@ public class FenetrePrincipaleController {
 	public FenetrePrincipaleController(){
 	}
 	
+//	public void ActionChoixAmi(){
+//		this.listeAmis.a
+//		    public void handle(MouseEvent me){
+//		    	ShowListeAmis();
+//		    	HideButton();
+//		    	ShowLabel();
+//		    	Resultat.setText("choisissez un ami ! ");
+//		    }
+//		});
+//	}
+	
+	public void ActionEnvoyerAmis(){
+		this.EnvoyerAmis.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		    public void handle(MouseEvent me){
+		    	ShowListeAmis();
+		    	HideButton();
+		    	ShowLabel();
+		    	Resultat.setText("choisissez un ami ! ");
+		    }
+		});
+	}
+	
 	public void ActionConsulterCompte(){
 		this.ConsulterCompte.setOnMouseClicked(new EventHandler<MouseEvent>(){
 		    public void handle(MouseEvent me){
 		    	HideButton();
+		    	HideListeAmis();
 		    	ShowLabel();
 		    	Resultat.setText("Votre Solde est de : "+Dab.GetSolde()+"€");
 		    }
@@ -54,6 +87,7 @@ public class FenetrePrincipaleController {
 		    public void handle(MouseEvent me){
 		    	Resultat.setText("Combien voulez-vous retirer ?");
 		    	ShowButton();
+		    	HideListeAmis();
 		    	ShowLabel();
 		    	IsRetrait = true;
 		    }
@@ -65,6 +99,7 @@ public class FenetrePrincipaleController {
 		    public void handle(MouseEvent me){
 		    	Resultat.setText("Combien voulez-vous déposer ?");
 		    	ShowButton();
+		    	HideListeAmis();
 		    	ShowLabel();
 		    	IsRetrait = false;
 		    }
@@ -169,4 +204,23 @@ public class FenetrePrincipaleController {
 		 this.TrenteButton.setVisible(true);
 	 }
 	 
+	 public void HideListeAmis(){
+		 this.listeAmis.setVisible(false);
+	 }
+	 
+	 public void ShowListeAmis(){
+		 this.listeAmis.setVisible(true);
+	 }
+	 
+	public void setAmisOnCombo(List<String> listeAmis){
+		ObservableList<String> options = FXCollections.observableArrayList();
+		
+		for (int i=0;i<listeAmis.size();i++){
+			options.add("Amis "+i);
+		}
+		
+		this.listeAmis.setItems(options);
+		
+	}
+ 
 }
