@@ -216,7 +216,7 @@ public class FenetrePrincipaleController {
 		ObservableList<String> options = FXCollections.observableArrayList();
 		
 		for (int i=0;i<listeAmis.size();i++){
-			options.add("Amis "+i);
+			options.add("Amis (id: "+listeAmis.get(i)+" )");
 		}
 		
 		this.listeAmis.setItems(options);

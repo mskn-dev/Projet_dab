@@ -14,12 +14,13 @@ public class ClientDabSocket {
 	private ObjectInputStream  in;
 	private List<String> listeClientsRecu = new ArrayList<String>();
 	private Object listeAmis = new Object();
-
+	private String ClientId;
 	public ClientDabSocket(){
 		try {
 			
 		     this.dabSocket = new Socket(InetAddress.getLocalHost(),2008);
 		     this.in = new ObjectInputStream(dabSocket.getInputStream());
+		     this.ClientId = (String)in.readObject();
 		     this.listeAmis= in.readObject();
 		     this.listeClientsRecu = (List<String>) listeAmis;
 		     System.out.println(this.listeClientsRecu);
@@ -36,6 +37,11 @@ public class ClientDabSocket {
 	}
 	
 	public List<String> getisteAmis(){
+		for(int i=0;i<this.listeClientsRecu.size();i++){
+			if(this.listeClientsRecu.get(i)== this.ClientId){
+				this.listeClientsRecu.remove(i);
+			}
+		}
 		return this.listeClientsRecu;
 	}
 	
