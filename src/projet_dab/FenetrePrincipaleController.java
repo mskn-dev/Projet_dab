@@ -113,6 +113,7 @@ public class FenetrePrincipaleController {
 		    	HideListeAmis();
 		    	ShowLabel();
 		    	IsRetrait = false;
+		    	IsVirement = false;
 		    }
 		});
 	}
