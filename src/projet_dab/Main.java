@@ -88,7 +88,7 @@ public class Main extends Application {
 			controller.HideLabel();
 			controller.HideListeAmis();
 			controller.HideButton();
-			controller.setAmisOnCombo(this.dabSocket.getisteAmis());
+			controller.setAmisOnCombo(this.dabSocket);
 			controller.SetMainApp(this);
 			
 		}
